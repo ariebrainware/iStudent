@@ -10,9 +10,6 @@ table thead {
     border-bottom: 1px solid black;
 }
 
-table tbody tr {
-    border-bottom: 1px solid black;
-}
 
 td {
     padding: 10px;
@@ -26,5 +23,5 @@ th {
 }
 
 .container-fluid {
-    padding: 50% 0;
+    padding: 5% 0;
 }
