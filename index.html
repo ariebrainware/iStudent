@@ -1,101 +1,114 @@
 <html>
-    <head>
-        <link rel="stylesheet" href="styles.css">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-        <title>UAS</title>
-    </head>
-    <body>
-        <h1 style="text-align: center; margin-top: 3%;">Nilai Akhir Mahasiswa</h1>
-        <div class="container-fluid">
-            <div class="container">
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                                Tambah
-                              </button>
-                        </tr>
-                        <tr>
-                            <th scope="col">NIM</th>
-                            <th scope="col">Nama</th>
-                            <th scope="col">Prodi</th>
-                            <th scope="col">Semester</th>
-                            <th scope="col">Quiz</th>
-                            <th scope="col">Tugas</th>
-                            <th scope="col">UTS</th>
-                            <th scope="col">UAS</th>
-                            <th scope="col">Predikat</th>
-                            <th scope="col"></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        
-                    </tbody>
-                </table>
-            </div>
+
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>UAS</title>
+</head>
+
+<body>
+    <h1 style="text-align: center; margin-top: 3%;">Nilai Akhir Mahasiswa</h1>
+    <div class="container-fluid">
+        <div class="container">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                            Tambah
+                        </button>
+                    </tr>
+                    <tr>
+                        <th scope="col">NIM</th>
+                        <th scope="col">Nama</th>
+                        <th scope="col">Prodi</th>
+                        <th scope="col">Semester</th>
+                        <th scope="col">Quiz</th>
+                        <th scope="col">Tugas</th>
+                        <th scope="col">UTS</th>
+                        <th scope="col">UAS</th>
+                        <th scope="col">Predikat</th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
         </div>
-        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <form id="student-data" onsubmit="insertStudent()">
+    </div>
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <form id="student-data" onsubmit="insertStudent()">
             <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel">Input Nilai Mahasiswa</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Input Nilai Mahasiswa</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="name">Nama Mahasiswa</label>
+                            <input type="text" required class="form-control" name="name" id="name"
+                                placeholder="Nama Mahasiswa">
+                        </div>
+                        <div class="form-group">
+                            <label for="NIM">NIM</label>
+                            <input type="text" required name="NIM" id="NIM" class="form-control"
+                                placeholder="NIM Mahasiswa">
+                        </div>
+                        <div class="form-group">
+                            <label for="prodi">Program Studi</label>
+                            <select name="prodi" required id="prodi" class="form-control">
+                                <option value=""></option>
+                                <option value="Teknik Komputer">Teknik Komputer</option>
+                                <option value="Sistem Informasi">Sistem Informasi</option>
+                                <option value="Design Komunikasi Visual">Design Komunikasi Visual</option>
+                                <option value="Teknik Industri">Teknik Industri</option>
+                                <option value="Matematika">Matematika</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="semester">Semester</label>
+                            <input type="number" required name="semester" id="semester" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="quiz_score">Nilai Quiz</label>
+                            <input type="number" required name="quiz_score" id="quiz_score" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="tugas_score">Nilai Tugas</label>
+                            <input type="number" required name="tugas_score" id="tugas_score" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="uts_score">Nilai UTS</label>
+                            <input type="number" required name="uts_score" id="uts_score" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="uas_score">Nilai UAS</label>
+                            <input type="number" required name="uas_score" id="uas_score" class="form-control">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <input type="submit" class="btn btn-primary" value="Simpan">
+                    </div>
                 </div>
-                <div class="modal-body">
-                    <div class="form-group">
-                        <label for="name">Nama Mahasiswa</label>
-                        <input type="text" required class="form-control" name="name" id="name" placeholder="Nama Mahasiswa">
-                    </div>
-                    <div class="form-group">
-                        <label for="NIM">NIM</label>
-                        <input type="text" required name="NIM" id="NIM" class="form-control" placeholder="NIM Mahasiswa">
-                    </div>
-                    <div class="form-group">
-                        <label for="prodi">Program Studi</label>
-                        <select name="prodi" required id="prodi" class="form-control">
-                            <option value=""></option>
-                            <option value="Teknik Komputer">Teknik Komputer</option>
-                            <option value="Sistem Informasi">Sistem Informasi</option>
-                            <option value="Design Komunikasi Visual">Design Komunikasi Visual</option>
-                            <option value="Teknik Industri">Teknik Industri</option>
-                            <option value="Matematika">Matematika</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="semester">Semester</label>
-                        <input type="number" required name="semester" id="semester" class="form-control">
-                    </div>
-                    <div class="form-group">
-                        <label for="quiz_score">Nilai Quiz</label>
-                        <input type="number" required name="quiz_score" id="quiz_score" class="form-control">
-                    </div>
-                    <div class="form-group">
-                        <label for="tugas_score">Nilai Tugas</label>
-                        <input type="number" required name="tugas_score" id="tugas_score" class="form-control">
-                    </div>
-                    <div class="form-group">
-                        <label for="uts_score">Nilai UTS</label>
-                        <input type="number" required name="uts_score" id="uts_score" class="form-control">
-                    </div>
-                    <div class="form-group">
-                        <label for="uas_score">Nilai UAS</label>
-                        <input type="number" required name="uas_score" id="uas_score" class="form-control">
-                    </div>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                  <input type="submit" class="btn btn-primary" value="Simpan">
-                </div>
-              </div>
             </div>
         </form>
-          </div>
-          <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-<script src="index.js"></script>
-    </body>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="index.js"></script>
+</body>
+
 </html>
