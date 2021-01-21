@@ -1,6 +1,3 @@
-// Global State Data
-let s = []
-
 // Form Field Variable
 const studentName = $('#name')
 const nim = $('#nim')
@@ -22,9 +19,6 @@ const btnSimpan = $('#btn-simpan')
 // const btnDeleteField = $('#btn-delete-field')
 const noDataInfo = () => {
     return `<tr id="no-data"><td colspan="10">No Data</td></tr>`
-}
-const btnDelete = nim => {
-    return `<button id="btn-delete-${nim}" class="btn btn-primary" onClick="deleteStudentScore(${nim})" type="button">Hapus</button>`
 }
 
 /*
@@ -54,7 +48,6 @@ const clearField = () => {
 
 const loadData = () => {
     const data = JSON.parse(localStorage.getItem("student_data"))
-    s = data
     if (data) {
         data.map(studentRow => {
             tableStudentData.append(createStudentRow(studentRow))
@@ -65,8 +58,22 @@ const loadData = () => {
 }
 
 const createStudentRow = data => {
-    console.log('createStudentRowData', data)
-    return `<tr scope="row"><td>${data.nim}</td><td>${data.name}</td><td>${data.prodi}</td><td>${data.semester}</td><td>${data.quiz_score}</td><td>${data.tugas_score}</td><td>${data.uts_score}</td><td>${data.uas_score}</td><td>${data.ip}</td><td><button id="btn-delete" class="btn btn-primary" onClick="deleteStudentScore(${data.nim})" type="button">Hapus</button></td></tr>`
+    return `
+    <tr scope="row" id="row-${data.nim}">
+        <td>${data.nim}</td>
+        <td>${data.name}</td>
+        <td>${data.prodi}</td>
+        <td>${data.semester}</td>
+        <td>${data.quiz_score}</td>
+        <td>${data.tugas_score}</td>
+        <td>${data.uts_score}</td>
+        <td>${data.uas_score}</td>
+        <td>${data.ip}</td>
+        <td>
+            <button id="btn-delete" class="btn btn-primary" onClick="deleteStudentScore('${data.nim}')" type="button">Hapus</button>
+        </td>
+    </tr>
+    `
 }
 
 const insertStudentScore = () => {
@@ -97,24 +104,59 @@ const insertStudentScore = () => {
         "uas_score": uasScore[0].value,
         "ip": ip,
     }
-    if (s.length > 0) {
-        s.push(studentData)
-        localStorage.setItem('student_data', JSON.stringify(s))
+    let data = JSON.parse(localStorage.getItem("student_data"))
+    if (data == null) {
+        const studentData = [{
+            "name": studentName[0].value,
+            "nim": nim[0].value,
+            "prodi": prodi[0].value,
+            "semester": semester[0].value,
+            "quiz_score": quizScore[0].value,
+            "tugas_score": tugasScore[0].value,
+            "uts_score": utsScore[0].value,
+            "uas_score": uasScore[0].value,
+            "ip": ip,
+        }]
+        localStorage.setItem('student_data', JSON.stringify(studentData))
+        console.log("saved to new key")
+    } else {
+        const studentData = {
+            "name": studentName[0].value,
+            "nim": nim[0].value,
+            "prodi": prodi[0].value,
+            "semester": semester[0].value,
+            "quiz_score": quizScore[0].value,
+            "tugas_score": tugasScore[0].value,
+            "uts_score": utsScore[0].value,
+            "uas_score": uasScore[0].value,
+            "ip": ip,
+        }
+        data.push(studentData)
+        localStorage.setItem('student_data', JSON.stringify(data))
+        console.log("saved to existing key")
     }
+
     tableStudentData.append(createStudentRow(studentData))
     successMessage()
     clearField()
 }
 
-const deleteStudentScore = (nim) => {
+const arrayRemove = (arr, value) => {
+    return arr.filter(ele => {
+        return ele.nim != value
+    })
+}
+
+const deleteStudentScore = nim => {
     const data = JSON.parse(localStorage.getItem("student_data"))
+    console.log("data before: ", data)
     if (data) {
-        data.filter(value => {
-            if (value.nim != nim) {
-                console.log('not deleted NIM: ', value.nim)
-                localStorage.setItem('student_data', JSON.stringify(data))
-            }
-        })
+        let result = arrayRemove(data, nim)
+        localStorage.setItem('student_data', JSON.stringify(result))
+        $(`#row-${nim}`).remove()
+
+        console.log("data after: ", data)
+
     }
 }
 
@@ -124,10 +166,8 @@ Event Listener
 */
 window.addEventListener('load', () => {
     loadData()
-
     formStudentData.on('submit', (event) => {
         event.preventDefault()
         insertStudentScore()
-        formStudentData[0].setAttribute("data-dismiss", "modal")
     })
 })
