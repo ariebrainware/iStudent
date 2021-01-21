@@ -4,17 +4,19 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <title>UAS</title>
 </head>
 
-<body>
+<body class="animate__animated animate__fadeIn">
     <h1 style="text-align: center; margin-top: 3%;">Nilai Akhir Mahasiswa</h1>
     <div class="container-fluid">
         <div class="container">
             <table class="table">
                 <thead>
                     <tr>
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                        <button type="button" id="btn-add" class="btn btn-primary" data-toggle="modal"
+                            data-target="#modal-add">
                             Tambah
                         </button>
                     </tr>
@@ -31,15 +33,15 @@
                         <th scope="col"></th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody id="student-data">
 
                 </tbody>
             </table>
         </div>
     </div>
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    <div class="modal fade" id="modal-add" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
-        <form id="student-data" onsubmit="insertStudent()">
+        <form id="form-student-data">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -56,7 +58,7 @@
                         </div>
                         <div class="form-group">
                             <label for="NIM">NIM</label>
-                            <input type="text" required name="NIM" id="NIM" class="form-control"
+                            <input type="text" required name="NIM" id="nim" class="form-control"
                                 placeholder="NIM Mahasiswa">
                         </div>
                         <div class="form-group">
@@ -92,16 +94,17 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <input type="submit" class="btn btn-primary" value="Simpan">
+                        <button type="button" id="btn-close" class="btn btn-secondary"
+                            data-dismiss="modal">Close</button>
+                        <button type="submit" id="btn-simpan" class="btn btn-primary" value="Simpan">Simpan</button>
                     </div>
                 </div>
             </div>
         </form>
     </div>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
         integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
         crossorigin="anonymous"></script>
