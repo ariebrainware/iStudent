@@ -1,6 +1,20 @@
 body {
-    background-color: #e9f0f8 !important;
+    background-color: #56888c !important;
+    height: 100%;
 }
+
+.font-config {
+    font-family: 'Ubuntu', sans-serif;
+    color: whitesmoke;
+}
+
+.header {
+    text-align: center; 
+    top: 3%;
+    left: 45%;
+    position: absolute;
+}
+
 table {
     width: 100%;
     text-align: center;
@@ -19,9 +33,14 @@ th {
 }
 
 .container {
-    background-color: white;
+    background-color:rgb(103, 167, 172,0.7);
+    position: absolute;
+    padding: 7px;
+    top: 13%;
+    left: 20%;
+    border-radius: 5px;
 }
 
 .container-fluid {
-    padding: 5% 0;
+    padding: 5% 0;    
 }
