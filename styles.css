@@ -9,7 +9,7 @@ body {
 }
 
 .header {
-    text-align: center; 
+    text-align: center;
     top: 3%;
     left: 45%;
     position: absolute;
@@ -24,16 +24,24 @@ table thead {
     border-bottom: 1px solid black;
 }
 
+.modal-content {
+    background-color: rgb(103, 167, 172, 0.7);
+}
+
+.form-control {
+    background-color: rgba(255, 255, 255, 0.7);
+}
 
 td {
     padding: 10px;
 }
+
 th {
     padding: 10px;
 }
 
 .container {
-    background-color:rgb(103, 167, 172,0.7);
+    background-color: rgb(103, 167, 172, 0.7);
     position: absolute;
     padding: 7px;
     top: 13%;
@@ -42,5 +50,5 @@ th {
 }
 
 .container-fluid {
-    padding: 5% 0;    
+    padding: 5% 0;
 }

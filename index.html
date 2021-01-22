@@ -1,10 +1,9 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
     <title>UAS</title>
@@ -17,8 +16,7 @@
             <table class="table">
                 <thead>
                     <tr>
-                        <button type="button" id="btn-add" class="btn btn-primary" data-toggle="modal"
-                            data-target="#modal-add">
+                        <button type="button" id="btn-add" class="btn btn-primary" data-toggle="modal" data-target="#modal-add">
                             Tambah
                         </button>
                     </tr>
@@ -40,8 +38,7 @@
                 </tbody>
             </table>
         </div>
-        <div class="modal fade" id="modal-add" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-            aria-hidden="true">
+        <div class="modal fade" id="modal-add" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <form id="form-student-data">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
@@ -54,13 +51,11 @@
                         <div class="modal-body">
                             <div class="form-group">
                                 <label for="name">Nama Mahasiswa</label>
-                                <input type="text" required class="form-control" name="name" id="name"
-                                    placeholder="Nama Mahasiswa">
+                                <input type="text" required class="form-control" name="name" id="name" placeholder="Nama Mahasiswa">
                             </div>
                             <div class="form-group">
                                 <label for="NIM">NIM</label>
-                                <input type="text" required name="NIM" id="nim" class="form-control"
-                                    placeholder="NIM Mahasiswa">
+                                <input type="text" required name="NIM" id="nim" class="form-control" placeholder="NIM Mahasiswa">
                             </div>
                             <div class="form-group">
                                 <label for="prodi">Program Studi</label>
@@ -95,8 +90,7 @@
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" id="btn-close" class="btn btn-secondary"
-                                data-dismiss="modal">Close</button>
+                            <button type="button" id="btn-close" class="btn btn-secondary" data-dismiss="modal">Close</button>
                             <button type="submit" id="btn-simpan" class="btn btn-primary" value="Simpan">Simpan</button>
                         </div>
                     </div>
@@ -108,12 +102,8 @@
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="index.js"></script>
 </body>
 
